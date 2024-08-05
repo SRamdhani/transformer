@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "gpt"
+version = "0.1.0"
+description = ""
+authors = ["Satesh Ramdhani <satesh.ramdhani@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+onnx = "^1.16.2"
+onnxscript = "^0.1.0.dev20240803"
+jupyter = "^1.0.0"
+torchtext = "^0.18.0"
+torch = "2.3.0"
+torchdata = "^0.8.0"
+portalocker = "^2.10.1"
+transformers = "^4.43.3"
+datasets = "^2.20.0"
+matplotlib = "^3.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
