@@ -3,6 +3,7 @@ from torchtyping import TensorType
 import torch.nn as nn
 import torch
 
+
 class MultiHeadedSelfAttention(nn.Module):
 
     def __init__(self, embedding_dim: int, attention_dim: int, num_heads: int):
