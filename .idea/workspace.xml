@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6b88693-4d2a-432a-90cb-be3031b30fc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/main/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/data-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/data-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/main/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/main/data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
