@@ -1,6 +1,7 @@
-import torch
-import torch.nn as nn
 from torchtyping import TensorType
+import torch.nn as nn
+import torch
+
 
 class SingleHeadAttention(nn.Module):
 
