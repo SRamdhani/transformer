@@ -10,6 +10,7 @@ class GPTDATA:
         self.tokenizer_gpt = AutoTokenizer.from_pretrained(tokenizer_name)
         self.vocab_size = self.tokenizer_gpt.vocab_size
         self.seq_len = seq_len
+        self.hf_dataset = None
 
     def sliding_window_inputs(self, text: str, max_length: int = None) -> list:
         if not max_length:
@@ -52,7 +53,13 @@ class GPTDATA:
             return arr, [1 for _ in range(max_length)]
 
 
-    def curate(self) -> Dataset:
+    def curate(self, max_length: int = None) -> None:
+
+        if not max_length:
+            max_len = self.seq_len
+        else:
+            max_len = max_length
+
         gpt_template = {
             'label': [],
             'input_ids': [],
@@ -63,16 +70,16 @@ class GPTDATA:
             temp = self.sliding_window_inputs(DATASET[i]['text'])
             if len(temp) == 2 and isinstance(temp[1], int):
                 label = temp[1]
-                arr, attn = self.padding_and_attn(temp)
+                arr, attn = self.padding_and_attn(temp, max_len)
                 gpt_template['label'].append(label)
                 gpt_template['attention_mask'].append(attn)
                 gpt_template['input_ids'].append(arr)
             else:
                 for t in temp:
                     label = t[1]
-                    arr, attn = self.padding_and_attn(t)
+                    arr, attn = self.padding_and_attn(t, max_len)
                     gpt_template['label'].append(label)
                     gpt_template['attention_mask'].append(attn)
                     gpt_template['input_ids'].append(arr)
 
-        return Dataset.from_dict(gpt_template)
+        self.hf_dataset = Dataset.from_dict(gpt_template)
