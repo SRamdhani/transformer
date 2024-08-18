@@ -2,6 +2,7 @@ from torchtyping import TensorType
 import torch.nn as nn
 import torch
 
+
 class VanillaNeuralNetwork(nn.Module):
 
     def __init__(self, model_dim: int):
