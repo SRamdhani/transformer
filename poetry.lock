@@ -3943,6 +3943,21 @@ torch = ">=2.3.0"
 tqdm = "*"
 
 [[package]]
+name = "torchtyping"
+version = "0.1.5"
+description = "Runtime type annotations for the shape, dtype etc. of PyTorch Tensors."
+optional = false
+python-versions = ">=3.7.0"
+files = [
+    {file = "torchtyping-0.1.5-py3-none-any.whl", hash = "sha256:429d76e16b08a2409226320565d557d4ba3d0d6f544db3e5dc4cf690ffa2a3bd"},
+    {file = "torchtyping-0.1.5.tar.gz", hash = "sha256:fb51e1792536223e2497b1e106ed0cbe681f7324044599cb718d03be3f2b3851"},
+]
+
+[package.dependencies]
+torch = ">=1.7.0"
+typeguard = ">=2.11.1,<3"
+
+[[package]]
 name = "tornado"
 version = "6.4.1"
 description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
@@ -4087,6 +4102,21 @@ filelock = "*"
 build = ["cmake (>=3.20)", "lit"]
 tests = ["autopep8", "flake8", "isort", "numpy", "pytest", "scipy (>=1.7.1)", "torch"]
 tutorials = ["matplotlib", "pandas", "tabulate", "torch"]
+
+[[package]]
+name = "typeguard"
+version = "2.13.3"
+description = "Run-time type checker for Python"
+optional = false
+python-versions = ">=3.5.3"
+files = [
+    {file = "typeguard-2.13.3-py3-none-any.whl", hash = "sha256:5e3e3be01e887e7eafae5af63d1f36c849aaa94e3a0112097312aabfa16284f1"},
+    {file = "typeguard-2.13.3.tar.gz", hash = "sha256:00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4"},
+]
+
+[package.extras]
+doc = ["sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
+test = ["mypy", "pytest", "typing-extensions"]
 
 [[package]]
 name = "types-python-dateutil"
@@ -4439,4 +4469,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "c061fcf2c6ba06b9c13c91c9e3e2e518a53770b1545fefb27798de00f1ef7b34"
+content-hash = "361b6684b556858e573a621721549c15516a9807a281b5fec3cebe26726e679c"
