@@ -14,6 +14,7 @@ class TRAIN:
         model_path = os.path.join(MODEL_DIR, filename)
 
         if os.path.exists(model_path):
+            print('loading pre-existing weights...')
             gptmodel.load_state_dict(torch.load(model_path))
 
         optimizer = torch.optim.SGD(gptmodel.parameters(), lr=lr, momentum=momentum)
@@ -56,12 +57,13 @@ class TRAIN:
             running_loss += loss.item()
 
             if best_loss > running_loss:
+                print('saving better model...')
                 torch.save(gptmodel.state_dict(),
                            model_path)
 
                 best_loss = running_loss
 
-            print(best_loss)
+            print('epoch: ', e, ' best_loss: ', best_loss)
 
 
 
