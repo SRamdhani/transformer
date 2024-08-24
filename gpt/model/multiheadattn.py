@@ -17,7 +17,7 @@ class MultiHeadedSelfAttention(nn.Module):
     def forward(self, embedded: TensorType[float]) -> torch.Tensor:
         attn_res = []
 
-        for s in self.singleheads:
+        for s in self.single_heads:
             attn_res.append(s(embedded))
 
         attn_res = torch.cat(attn_res, dim=2)

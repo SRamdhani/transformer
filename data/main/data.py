@@ -2,6 +2,7 @@ from transformers import AutoTokenizer
 from datasets import Dataset
 from .. import DATASET
 
+
 class GPTDATA:
 
     def __init__(self, tokenizer_name: str = "distilbert-base-uncased",
@@ -21,26 +22,25 @@ class GPTDATA:
         tokenized = self.tokenizer_gpt(text)
         input_ids = tokenized['input_ids']
         # attn_mask = tokenized['attention_mask']
-        input_ids.pop(0)  # 101
+        input_ids.pop(0)   # 101
         input_ids.pop(-1)  # 102
 
-        if len(input_ids) <= max_len - 1:
-            return [[101] + input_ids[:-1] + [102], input_ids[-1]]
+        if len(input_ids) <= max_len:
+            return [ [input_ids[:-1], input_ids[1:]] ]
         else:
             data = []
 
-            for i in range(len(input_ids) - max_len - 1):
-                temp = input_ids[i:(i + max_len - 1)]
+            for i in range(len(input_ids) - max_len):
 
                 data.append(
-                    [[101] + temp[:-1] + [102], temp[-1]]
+                    [input_ids[i:(i+max_len)], input_ids[(i+1):(i+1+max_len)]]
                 )
 
             return data
 
     @staticmethod
     def padding_and_attn(arr_tup: list, max_length: int):
-        arr, _ = arr_tup
+        arr = arr_tup
 
         ones = len(arr)
         zeros = max_length - len(arr)
@@ -68,18 +68,12 @@ class GPTDATA:
 
         for i in range(len(DATASET)):
             temp = self.sliding_window_inputs(DATASET[i]['text'])
-            if len(temp) == 2 and isinstance(temp[1], int):
-                label = temp[1]
-                arr, attn = self.padding_and_attn(temp, max_len)
-                gpt_template['label'].append(label)
+
+            for t in temp:
+                arr1, attn = self.padding_and_attn(t[0], max_len)
+                arr2, attn = self.padding_and_attn(t[1], max_len)
+                gpt_template['label'].append(arr2)
                 gpt_template['attention_mask'].append(attn)
-                gpt_template['input_ids'].append(arr)
-            else:
-                for t in temp:
-                    label = t[1]
-                    arr, attn = self.padding_and_attn(t, max_len)
-                    gpt_template['label'].append(label)
-                    gpt_template['attention_mask'].append(attn)
-                    gpt_template['input_ids'].append(arr)
+                gpt_template['input_ids'].append(arr1)
 
         self.hf_dataset = Dataset.from_dict(gpt_template)

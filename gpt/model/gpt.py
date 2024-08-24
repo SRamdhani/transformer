@@ -39,6 +39,7 @@ class GPT(nn.Module):
         transformer_norm = self.layer_norm(transformer)
 
         # Final Linear Softmax
-        final = nn.Softmax(dim=2)(self.final_layer(transformer_norm))
+        # final = nn.Softmax(dim=2)(self.final_layer(transformer_norm))
 
+        final = self.final_layer(transformer_norm)
         return final
