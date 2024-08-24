@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6b88693-4d2a-432a-90cb-be3031b30fc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gpt/gen/predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gpt/train/loss.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gpt/train/training.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/data-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/main/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/main/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/main/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/model/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/main/gpt.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/model/gpt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/main/multiheadattn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/model/multiheadattn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/main/selfattn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/model/selfattn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/main/vanilla.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/model/vanilla.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpt/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpt/train/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/training.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,16 +81,5 @@
       <updated>1722706127865</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

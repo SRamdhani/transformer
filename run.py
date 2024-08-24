@@ -1,4 +1,5 @@
 from torch.utils.data.dataloader import DataLoader
+from gpt.train.training import TRAIN
 from data.main.data import GPTDATA
 from gpt.model.gpt import GPT
 import torch
@@ -9,6 +10,7 @@ gptdata.curate(max_length = 512)
 VOCAB_SIZE = gptdata.vocab_size
 SEQ_LEN = gptdata.seq_len
 TOKENIZER = gptdata.tokenizer_gpt
+BATCH_SIZE = 30
 
 gptmodel = GPT(vocab_size=VOCAB_SIZE,
                context_length=SEQ_LEN,
@@ -16,17 +18,11 @@ gptmodel = GPT(vocab_size=VOCAB_SIZE,
                num_blocks=4,
                num_heads=4)
 
-data = gptdata.hf_dataset
-
 dataloader = DataLoader(
-    data,
-    batch_size=30
+    gptdata.hf_dataset,
+    batch_size=BATCH_SIZE
 )
 
-ds = next(iter(dataloader))
-input_ids = torch.stack(ds['input_ids']).T
-label = torch.stack(ds['label']).T
-
-test = gptmodel(input_ids)
-print(test.shape)
-print(label.shape)
+TRAIN.run(gptmodel=gptmodel,
+          dataloader=dataloader,
+          batch_size=BATCH_SIZE)
