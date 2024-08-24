@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6b88693-4d2a-432a-90cb-be3031b30fc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gpt/train/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/train/loss.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/training.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
