@@ -5,7 +5,7 @@ from gpt.model.gpt import GPT
 import torch
 
 gptdata = GPTDATA()
-gptdata.curate(max_length = 512)
+gptdata.curate(max_length=512)
 
 VOCAB_SIZE = gptdata.vocab_size
 SEQ_LEN = gptdata.seq_len
@@ -25,4 +25,5 @@ dataloader = DataLoader(
 
 TRAIN.run(gptmodel=gptmodel,
           dataloader=dataloader,
-          batch_size=BATCH_SIZE)
+          batch_size=BATCH_SIZE,
+          epochs=200)
