@@ -18,6 +18,7 @@ class GEN:
     def generate(prompt: str,
                  length: int,
                  seq_len: int,
+                 p: float,
                  gptmodel: GPT,
                  gptdata: GPTDATA,
                  tokenizer: AutoTokenizer):
@@ -34,7 +35,7 @@ class GEN:
             attn = torch.tensor(attn)
 
             output = gptmodel(excerpt_pad).squeeze()
-            sampled = GEN.pnucleus(nn.Softmax(dim=0)(output[attn == 1][-1]))
+            sampled = GEN.pnucleus(nn.Softmax(dim=0)(output[attn == 1][-1]), p=p)
             tokenized.append(sampled.item())
 
         return tokenized, tokenizer.decode(tokenized)
