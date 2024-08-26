@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6b88693-4d2a-432a-90cb-be3031b30fc5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/deprecated/generate.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpt/gen/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/gen/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpt/gen/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpt/gen/generate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/training.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
